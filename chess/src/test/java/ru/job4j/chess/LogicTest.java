@@ -9,7 +9,6 @@ import ru.job4j.chess.firuges.black.RookBlack;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-
 public class LogicTest {
 
     @Test
@@ -35,11 +34,11 @@ public class LogicTest {
     }
 
     @Test
-    public void whenMoveImpossibleMoveException ()
+    public void whenMoveImpossibleMoveException()
             throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
         Logic logic = new Logic();
         logic.add(new BishopBlack(Cell.C8));
-        ImpossibleMoveException  exception = assertThrows(ImpossibleMoveException .class, () -> {
+        ImpossibleMoveException exception = assertThrows(ImpossibleMoveException.class, () -> {
             logic.move(Cell.C8, Cell.C7);
         });
         assertThat(exception.getMessage()).isEqualTo("Could not way from C8 to C7");
